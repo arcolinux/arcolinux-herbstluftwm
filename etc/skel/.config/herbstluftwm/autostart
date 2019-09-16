@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+function run {
+  if ! pgrep $1 ;
+  then
+    $@&
+  fi
+}
+
 # this is a simple config for herbstluftwm
 
 #Find out your monitor name with xrandr or arandr (save and you get this line)
@@ -30,7 +37,7 @@ xsetroot -cursor_name left_ptr &
 feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
 sxhkd &
 conky -c $HOME/.config/herbstluftwm/system-overview &
-variety &
+run variety &
 nm-applet &
 pamac-tray &
 xfce4-power-manager &
