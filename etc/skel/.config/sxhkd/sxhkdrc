@@ -97,7 +97,7 @@ super + Escape
 #Keyboard dependent
 #Terminal emulator
 #super + KP_Enter
-#	urxvt
+#	termite
 
 #########################
 # SUPER + SHIFT KEYS    #
@@ -120,8 +120,6 @@ super + shift + d
 #reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
-
-
 
 #########################
 # CONTROL + ALT KEYS    #
@@ -175,7 +173,6 @@ ctrl + alt + o
 ctrl + alt + s
      spotify
 
-
 #Rofi theme selector
 ctrl + alt + r
    rofi-theme-selector
@@ -192,11 +189,14 @@ ctrl + alt + v
 ctrl + alt + w
      atom
 
+#Termite
+ctrl + alt + Return
+     termite
 
 #Keyboard dependent
-#Urxvt
+#Termite
 #ctrl + alt + KP_Enter
-#     urxvt
+#     termite
 
 #pamac-manager
 ctrl + alt + p
@@ -286,8 +286,6 @@ ctrl + shift + Escape
 #########################
 #     SCREENSHOTS       #
 #########################
-
-
 
 #Scrot
 Print
