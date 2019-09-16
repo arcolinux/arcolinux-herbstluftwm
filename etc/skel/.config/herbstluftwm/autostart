@@ -8,28 +8,31 @@ hc() {
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
+pkill -u $USER '^compton$'
+
+#Autostart applications
+compton  --config $HOME/.config/herbstluftwm/compton.conf &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
+sxhkd &
+
+xsetroot -solid '#000000'
 
 # remove all existing keybindings
 hc keyunbind --all
 
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
-#Mod=Mod1    # Use alt as the main modifier
+#Mod=Mod1  # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
+TERMINAL=termite
 
-hc keybind $Mod-Shift-q quit
+hc keybind $Mod-Shift-x quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn ${TERMINAL:-termite} # use your $TERMINAL with xterm as fallback
-
-#launching applications  CTRL+ALT
-hc keybind Control-Mod1-f firefox
-
-
-#launching applications 
-hc keybind Mod-Shift-Return thunar
-
+hc keybind $Mod-Shift-q close
+hc keybind $Mod-q close
+hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
+hc keybind Control-Mod1-t spawn ${TERMINAL:-xterm}
 
 # basic movement
 # focusing clients
@@ -71,8 +74,12 @@ hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..9} )
-tag_keys=( {1..9} 0 )
+tag_names=( {1..10} )
+#tag_names=("\61612" "\61899" "\61947" "\61635" "\61502" "\61501" "\61705" "\61564" "\62150" "\61872" )
+#tag_names=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+#tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
+tag_keys=( {1..10} 0 )
+
 
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
@@ -98,7 +105,7 @@ hc keybind $Mod-p pseudotile toggle
 # I.e. if there are two windows within a frame, the grid layout is skipped.
 hc keybind $Mod-space                                                           \
             or , and . compare tags.focus.curframe_wcount = 2                   \
-                     . cycle_layout +1 vertical horizontal max vertical grid    \
+                     . cycle_layout +1 vertical horizontal max grid    \
                , cycle_layout +1
 
 # mouse
@@ -120,14 +127,16 @@ hc attr theme.floating.reset 1
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
 hc set frame_bg_normal_color '#565656'
-hc set frame_bg_active_color '#345F0C'
-hc set frame_border_width 1
-hc set always_show_frame 1
+hc set frame_bg_active_color '#6790EB'
+hc set frame_border_width 0
+hc set always_show_frame 0
 hc set frame_bg_transparent 1
-hc set frame_transparent_width 5
-hc set frame_gap 4
+hc set frame_transparent_width 0
+hc set frame_gap 0
+hc set focus_follows_mouse 1
 
-hc attr theme.active.color '#9fbc00'
+#Customize herbstluftwm
+hc attr theme.active.color '#6790EB'
 hc attr theme.normal.color '#454545'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 1
@@ -136,14 +145,16 @@ hc attr theme.border_width 3
 hc attr theme.floating.border_width 4
 hc attr theme.floating.outer_width 1
 hc attr theme.floating.outer_color black
-hc attr theme.active.inner_color '#3E4A00'
-hc attr theme.active.outer_color '#3E4A00'
+hc attr theme.active.inner_color '#0B0B21'
+hc attr theme.active.outer_color '#6790EB'
 hc attr theme.background_color '#141414'
 
-hc set window_gap 0
+#Bar & window gaps
+hc pad 0 30 0 0
+hc set window_gap 5
 hc set frame_padding 0
 hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 1
+hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
 
 # rules
@@ -156,6 +167,7 @@ hc rule focus=on # normally focus new clients
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc rule class=Oblogout fullscreen=on
 
 hc set tree_style '╾│ ├└╼─┐'
 
