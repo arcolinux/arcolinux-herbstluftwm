@@ -50,6 +50,7 @@ super + F11
 super + F12
     rofi -show run
 
+
 #########################
 # SUPER + ... KEYS      #
 #########################
@@ -110,6 +111,7 @@ super + Escape
 #super + KP_Enter
 #	  termite
 
+
 #########################
 # SUPER + SHIFT KEYS    #
 #########################
@@ -129,6 +131,7 @@ super + shift + s
 #Keyboard dependent
 #super + shift + KP_Enter
 #	thunar
+
 
 #########################
 # CONTROL + ALT KEYS    #
@@ -226,10 +229,10 @@ ctrl + alt + m
 #ctrl + alt + KP_Enter
 #     termite
 
+
 #########################
 # ALT + ... KEYS        #
 #########################
-
 
 #Wallpaper trash
 alt + t
@@ -276,7 +279,6 @@ alt + F3
 #VARIETY KEYS WITH PYWAL#
 #########################
 
-
 #Wallpaper trash
 alt + shift + t
     variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
@@ -296,6 +298,7 @@ alt + shift + f
 #Wallpaper update
 alt + shift + u
     wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
 
 #########################
 # CONTROL + SHIFT KEYS  #
@@ -372,6 +375,7 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
+
 #########################
 #        POLYBAR        #
 #########################
@@ -379,3 +383,8 @@ XF86MonBrightnessDown
 #Hide polybar
 super + y
     polybar-msg cmd toggle
+
+
+#########################
+#   DESKTOP SPECIFIC    #
+#########################
