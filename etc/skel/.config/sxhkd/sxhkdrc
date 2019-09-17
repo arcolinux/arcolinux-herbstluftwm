@@ -58,11 +58,31 @@ super + F12
 super + e
     atom
 
+#Browser
+super + w
+    vivaldi-stable
+
+#Conky-toggle
+super + c
+    conky-toggle
+
 #Htop
 super + h
     urxvt 'htop task manager' -e htop
 
-#music player
+#Oblogout
+super + x
+    oblogout
+
+#Oblogout
+super + Pause
+    oblogout
+
+#Pavucontrol
+super + v
+    pavucontrol
+
+#Pragha
 super + m
     pragha
 
@@ -70,34 +90,25 @@ super + m
 super + r
     rofi-theme-selector
 
+#Termite
+super + Return
+    termite
+
+#Thunar
+super + f
+    thunar
+
 #Urxvt
 super + t
     urxvt
-
-#Pavucontrol
-super + v
-    pavucontrol
-
-#Browser
-super + w
-    vivaldi-stable
-
-#Hide polybar
-super + y
-    polybar-msg cmd toggle
-
-#Oblogout
-super + x
-    oblogout
 
 #Xkill
 super + Escape
     xkill
 
 #Keyboard dependent
-#Terminal emulator
 #super + KP_Enter
-#	termite
+#	  termite
 
 #########################
 # SUPER + SHIFT KEYS    #
@@ -107,13 +118,7 @@ super + Escape
 super + shift + Return
 	thunar
 
-#Keyboard dependent
-#File-Manager
-#super + shift + KP_Enter
-#	thunar
-
-
-#DMENU
+#dmenu
 super + shift + d
 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
@@ -121,21 +126,37 @@ super + shift + d
 super + shift + s
 	pkill -USR1 -x sxhkd
 
+#Keyboard dependent
+#super + shift + KP_Enter
+#	thunar
+
 #########################
 # CONTROL + ALT KEYS    #
 #########################
 
-#Xfce4-appfinder
-ctrl + alt + a
-     xfce4-appfinder
+#am-rotate-conky
+ctrl + alt + Next
+     am-rotate-conky -n
 
-#File-Manager
-ctrl + alt + b
-     thunar
+#am-rotate-conky
+ctrl + alt + Prior
+    am-rotate-conky -p
+
+#Atom
+ctrl + alt + w
+     atom
 
 #Catfish
 ctrl + alt + c
      catfish
+
+#Chromium
+ctrl + alt + g
+    chromium -no-default-browser-check
+
+#Compton Toggle
+ctrl + alt + o
+    ~/.config/herbstluftwm/scripts/compton-toggle.sh
 
 #Evolution
 ctrl + alt + e
@@ -145,63 +166,65 @@ ctrl + alt + e
 ctrl + alt + f
      firefox
 
-#Chromium
-ctrl + alt + g
-     chromium -no-default-browser-check
-
 #Nitrogen
 ctrl + alt + i
      nitrogen
 
-#Screen-Locker
-ctrl + alt + k
-     slimlock
+#Oblogout
+ctrl + alt + Delete
+   oblogout
 
-#Screen-Locker
-ctrl + alt + l
-    slimlock
-
-#Xfce4-settings-manager
-ctrl + alt + m
-     xfce4-settings-manager
-
-#Compton Toggle
-ctrl + alt + o
-     ~/.config/herbstluftwm/scripts/compton-toggle.sh
-
-#Spotify
-ctrl + alt + s
-     spotify
-
-#Rofi theme selector
-ctrl + alt + r
-   rofi-theme-selector
+#Pamac-manager
+ctrl + alt + p
+    pamac-manager
 
 #Pulse Audio Control
 ctrl + alt + u
      pavucontrol
 
-#Vivaldi
-ctrl + alt + v
-     vivaldi-stable
+#Rofi theme selector
+ctrl + alt + r
+  rofi-theme-selector
 
-#Atom
-ctrl + alt + w
-     atom
+#Slimlock
+ctrl + alt + k
+     slimlock
+
+#Slimlock
+ctrl + alt + l
+    slimlock
+
+#Spotify
+ctrl + alt + s
+   spotify
 
 #Termite
 ctrl + alt + Return
      termite
 
-#Keyboard dependent
 #Termite
+ctrl + alt + t
+    termite
+
+#Thunar
+ctrl + alt + b
+     thunar
+
+#Vivaldi
+ctrl + alt + v
+    vivaldi-stable
+
+#Xfce4-appfinder
+ctrl + alt + a
+    xfce4-appfinder
+
+#Xfce4-settings-manager
+ctrl + alt + m
+     xfce4-settings-manager
+
+#Keyboard dependent
 #ctrl + alt + KP_Enter
 #     termite
-
-#pamac-manager
-ctrl + alt + p
-     pamac-manager
-
 
 #########################
 # ALT + ... KEYS        #
@@ -232,9 +255,9 @@ alt + Left
 alt + Right
     variety -n
 
-#Wallpaper pause
+#Wallpaper toggle-pause
 alt + Up
-    variety --pause
+    variety --toggle-pause
 
 #Wallpaper resume
 alt + Down
@@ -323,23 +346,23 @@ XF86AudioMute
 
 #PLAY
 XF86AudioPlay
-    mpc toggle
-    #playerctl play-pause
+    #mpc toggle
+    playerctl play-pause
 
 #Next
 XF86AudioNext
-     mpc next
-     #playerctl next
+     #mpc next
+     playerctl next
 
 #previous
 XF86AudioPrev
-    mpc prev
-    #playerctl previous
+    #mpc prev
+    playerctl previous
 
 #Stop
 XF86AudioStop
-    mpc stop
-    #playerctl stop
+    #mpc stop
+    playerctl stop
 
 #Brightness up
 XF86MonBrightnessUp
@@ -348,3 +371,11 @@ XF86MonBrightnessUp
 #Brightness down
 XF86MonBrightnessDown
     xbacklight -dec 10
+
+#########################
+#        POLYBAR        #
+#########################
+
+#Hide polybar
+super + y
+    polybar-msg cmd toggle
