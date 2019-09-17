@@ -68,8 +68,9 @@ hc keybind $Mod-Shift-x quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-q close
-hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
-hc keybind Control-Mod1-t spawn ${TERMINAL:-xterm}
+#set in sxhkd
+#hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
+#hc keybind Control-Mod1-t spawn ${TERMINAL:-xterm}
 
 # basic movement
 # focusing clients
