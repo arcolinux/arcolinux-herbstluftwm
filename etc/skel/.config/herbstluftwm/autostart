@@ -118,7 +118,6 @@ tag_names=( {1..10} )
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 tag_keys=( {1..10} 0 )
 
-
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
@@ -129,9 +128,53 @@ for i in ${!tag_names[@]} ; do
     fi
 done
 
-# cycle through tags
-hc keybind $Mod-period use_index +1 --skip-visible
-hc keybind $Mod-comma  use_index -1 --skip-visible
+#FRENCH AZERTY KEYBOARD GOTO TAG
+# hc keybind "$Mod-ampersand" use_index 0
+# hc keybind "$Mod-eacute" use_index 1
+# hc keybind "$Mod-quotedbl" use_index 2
+# hc keybind "$Mod-apostrophe" use_index 3
+# hc keybind "$Mod-parenleft" use_index 4
+# hc keybind "$Mod-minus" use_index 5
+# hc keybind "$Mod-egrave" use_index 6
+# hc keybind "$Mod-underscore" use_index 7
+# hc keybind "$Mod-ccedilla" use_index 8
+# hc keybind "$Mod-agrave" use_index 9
+
+#FRENCH AZERTY KEYBOARD MOVE TO TAG
+# hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
+# hc keybind "$Mod-Shift-eacute" chain , move_index 1 ,  use_index 1
+# hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 ,  use_index 2
+# hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 ,  use_index 3
+# hc keybind "$Mod-Shift-parenleft" chain , move_index 4 ,  use_index 4
+# hc keybind "$Mod-Shift-minus" chain , move_index 5,  use_index 5
+# hc keybind "$Mod-Shift-egrave" chain , move_index 6 ,  use_index 6
+# hc keybind "$Mod-Shift-underscore" chain , move_index 7 ,  use_index 7
+# hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 ,  use_index 8
+# hc keybind "$Mod-Shift-agrave" chain , move_index 9 ,  use_index 9
+
+#BELGIAN AZERTY KEYBOARD GOTO TAG
+hc keybind "$Mod-ampersand" use_index 0
+hc keybind "$Mod-eacute" use_index 1
+hc keybind "$Mod-quotedbl" use_index 2
+hc keybind "$Mod-apostrophe" use_index 3
+hc keybind "$Mod-parenleft" use_index 4
+hc keybind "$Mod-section" use_index 5
+hc keybind "$Mod-egrave" use_index 6
+hc keybind "$Mod-exclam" use_index 7
+hc keybind "$Mod-ccedilla" use_index 8
+hc keybind "$Mod-agrave" use_index 9
+
+#BELGIAN AZERTY KEYBOARD MOVE TO TAG
+hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
+hc keybind "$Mod-Shift-eacute" chain , move_index 1 , use_index 1
+hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 , use_index 2
+hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 , use_index 3
+hc keybind "$Mod-Shift-parenleft" chain , move_index 4 , use_index 4
+hc keybind "$Mod-Shift-section" chain , move_index 5 , use_index 5
+hc keybind "$Mod-Shift-egrave" chain , move_index 6 , use_index 6
+hc keybind "$Mod-Shift-exclam" chain , move_index 7 , use_index 7
+hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 , use_index 8
+hc keybind "$Mod-Shift-agrave" chain , move_index 9 , use_index 9
 
 # layouting
 hc keybind $Mod-r remove
@@ -154,8 +197,8 @@ hc mousebind $Mod-Button3 resize
 
 # focus
 hc keybind $Mod-BackSpace   cycle_monitor
-hc keybind $Mod-Tab         cycle_all +1
-hc keybind $Mod-Shift-Tab   cycle_all -1
+hc keybind $Mod-Tab         use_index +1 --skip-visible
+hc keybind $Mod-Shift-Tab   use_index -1 --skip-visible
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
@@ -212,15 +255,5 @@ hc set tree_style '╾│ ├└╼─┐'
 # unlock, just to be sure
 hc unlock
 
-# do multi monitor setup here, e.g.:
-# hc set_monitors 1280x1024+0+0 1280x1024+1280+0
-# or simply:
-# hc detect_monitors
-
-# find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" $monitor &
-done
+#launching polybar
+~/.config/polybar/launch.sh

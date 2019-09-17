@@ -63,13 +63,15 @@ super + e
 super + w
     vivaldi-stable
 
+#conflicts with herbstluftwm
 #Conky-toggle
-super + c
-    conky-toggle
+#super + c
+#    conky-toggle
 
+#conflicts with herbstluftwm
 #Htop
-super + h
-    urxvt 'htop task manager' -e htop
+#super + h
+#    urxvt 'htop task manager' -e htop
 
 #Oblogout
 super + x
@@ -87,17 +89,19 @@ super + v
 super + m
     pragha
 
+#conflicts with herbstluftwm
 #Rofi theme selector
-super + r
-    rofi-theme-selector
+#super + r
+#    rofi-theme-selector
 
 #Termite
 super + Return
     termite
 
+#conflicts with herbstluftwm
 #Thunar
-super + f
-    thunar
+#super + f
+#    thunar
 
 #Urxvt
 super + t
