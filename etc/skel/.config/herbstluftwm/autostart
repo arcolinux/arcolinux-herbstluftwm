@@ -27,9 +27,11 @@ compton  --config $HOME/.config/herbstluftwm/compton.conf &
 xsetroot -solid '#000000'
 xsetroot -cursor_name left_ptr &
 
+#keybindings are in config of sxhkd - interchangeable with other TWM
+sxhkd &
+
 #feh --bg-scale ~/.config/herbstluftwm/wall.png &
 feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
-sxhkd &
 conky -c $HOME/.config/herbstluftwm/system-overview &
 run variety &
 nm-applet &
@@ -115,10 +117,16 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
 tag_names=( {1..10} )
-#tag_names=("\61612" "\61899" "\61947" "\61635" "\61502" "\61501" "\61705" "\61564" "\62150" "\61872" )
 #tag_names=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
-tag_keys=( {1..10} 0 )
+#tag_names=("\61612" "\61899" "\61947" "\61635" "\61502" "\61501" "\61705" "\61564" "\62150" "\61872" )
+
+#Qwerty
+#tag_keys=( {1..10} 0 )
+#Belgian azerty
+tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla agrave )
+#French azerty
+#tag_keys=( ampersand eacute quotedbl apostrophe parenleft minus egrave underscore ccedilla agrave )
 
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
@@ -126,10 +134,12 @@ for i in ${!tag_names[@]} ; do
     key="${tag_keys[$i]}"
     if ! [ -z "$key" ] ; then
         hc keybind "$Mod-$key" use_index "$i"
-        hc keybind "$Mod-Shift-$key" move_index "$i"
+        hc keybind "$Mod-Shift-$key" chain , move_index "$i" , use_index "$i"
     fi
 done
 
+
+#NOT NEEDED ANYMORE - See tag_keys variable
 #FRENCH AZERTY KEYBOARD GOTO TAG
 # hc keybind "$Mod-ampersand" use_index 0
 # hc keybind "$Mod-eacute" use_index 1
@@ -155,28 +165,28 @@ done
 # hc keybind "$Mod-Shift-agrave" chain , move_index 9 ,  use_index 9
 
 #BELGIAN AZERTY KEYBOARD GOTO TAG
-hc keybind "$Mod-ampersand" use_index 0
-hc keybind "$Mod-eacute" use_index 1
-hc keybind "$Mod-quotedbl" use_index 2
-hc keybind "$Mod-apostrophe" use_index 3
-hc keybind "$Mod-parenleft" use_index 4
-hc keybind "$Mod-section" use_index 5
-hc keybind "$Mod-egrave" use_index 6
-hc keybind "$Mod-exclam" use_index 7
-hc keybind "$Mod-ccedilla" use_index 8
-hc keybind "$Mod-agrave" use_index 9
+# hc keybind "$Mod-ampersand" use_index 0
+# hc keybind "$Mod-eacute" use_index 1
+# hc keybind "$Mod-quotedbl" use_index 2
+# hc keybind "$Mod-apostrophe" use_index 3
+# hc keybind "$Mod-parenleft" use_index 4
+# hc keybind "$Mod-section" use_index 5
+# hc keybind "$Mod-egrave" use_index 6
+# hc keybind "$Mod-exclam" use_index 7
+# hc keybind "$Mod-ccedilla" use_index 8
+# hc keybind "$Mod-agrave" use_index 9
 
 #BELGIAN AZERTY KEYBOARD MOVE TO TAG
-hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
-hc keybind "$Mod-Shift-eacute" chain , move_index 1 , use_index 1
-hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 , use_index 2
-hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 , use_index 3
-hc keybind "$Mod-Shift-parenleft" chain , move_index 4 , use_index 4
-hc keybind "$Mod-Shift-section" chain , move_index 5 , use_index 5
-hc keybind "$Mod-Shift-egrave" chain , move_index 6 , use_index 6
-hc keybind "$Mod-Shift-exclam" chain , move_index 7 , use_index 7
-hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 , use_index 8
-hc keybind "$Mod-Shift-agrave" chain , move_index 9 , use_index 9
+# hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
+# hc keybind "$Mod-Shift-eacute" chain , move_index 1 , use_index 1
+# hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 , use_index 2
+# hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 , use_index 3
+# hc keybind "$Mod-Shift-parenleft" chain , move_index 4 , use_index 4
+# hc keybind "$Mod-Shift-section" chain , move_index 5 , use_index 5
+# hc keybind "$Mod-Shift-egrave" chain , move_index 6 , use_index 6
+# hc keybind "$Mod-Shift-exclam" chain , move_index 7 , use_index 7
+# hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 , use_index 8
+# hc keybind "$Mod-Shift-agrave" chain , move_index 9 , use_index 9
 
 # layouting
 hc keybind $Mod-r remove
@@ -237,7 +247,7 @@ hc pad 0 30 0 0
 hc set window_gap 5
 hc set frame_padding 0
 hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 0
+hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
 # rules
@@ -263,11 +273,16 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class=Oblogout fullscreen=on
+hc rule class=VirtualBox fullscreen=on
 
 hc set tree_style '╾│ ├└╼─┐'
 
 # unlock, just to be sure
 hc unlock
+
+#monitor setup
+#hc detect_monitors
+hc set_monitors 1920x1080+0+0 1920x1080+0+0
 
 #launching polybar
 ~/.config/polybar/launch.sh
