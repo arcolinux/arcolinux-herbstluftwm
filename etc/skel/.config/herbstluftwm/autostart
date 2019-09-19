@@ -244,18 +244,16 @@ hc rule focus=on # normally focus new clients
 #hc rule focus=off # normally do not focus new clients
 
 #assign applications to workspaces or tags
-hc rule class~'(firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome)' tag=1
-hc rule class~'(Atom|Subl3)' tag=2
-hc rule class=Inkscape tag=3
-hc rule class=Gimp tag=4
-hc rule class~'(Meld|ristretto|Nitrogen)' tag=5
-hc rule class=vlc tag=6
-hc rule class~'(VirtualBox Manager|Vmplayer)' tag=7
-hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag=8
-hc rule class~'(Evolution|Geary)' tag=9
-hc rule class=Spotify tag=10
-hc rule class=Spotify move_index 9
-hc rule class=Spotify use_index 9
+# hc rule class~'(firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome)' tag=1
+# hc rule class~'(Atom|Subl3)' tag=2
+# hc rule class=Inkscape tag=3
+# hc rule class=Gimp tag=4
+# hc rule class~'(Meld|ristretto|Nitrogen)' tag=5
+# hc rule class=vlc tag=6
+# hc rule class~'(VirtualBox Manager|Vmplayer)' tag=7
+# hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag=8
+# hc rule class~'(Evolution|Geary)' tag=9
+# hc rule class=Spotify tag=10
 
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on

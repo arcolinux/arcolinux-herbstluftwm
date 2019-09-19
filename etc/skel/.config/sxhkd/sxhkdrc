@@ -1,6 +1,15 @@
 #########################
 # SUPER + FUNCTION KEYS #
 #########################
+# if you want to assign applications to specific tags or workspaces
+# add a command behind the application to focus on that workspace if required
+# index 0 corresponds to tag or workspace 1
+# index 1 corresponds to tag or workspace	2
+# example
+
+# Vivaldi
+#super + F1
+#	vivaldi-stable & herbstclient use_index 0
 
 # Vivaldi
 super + F1
