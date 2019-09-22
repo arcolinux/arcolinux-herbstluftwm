@@ -79,15 +79,25 @@ hc keybind $Mod-j     focus down
 hc keybind $Mod-k     focus up
 hc keybind $Mod-l     focus right
 
-# moving clients
-hc keybind $Mod-Shift-Left  shift left
-hc keybind $Mod-Shift-Down  shift down
-hc keybind $Mod-Shift-Up    shift up
-hc keybind $Mod-Shift-Right shift right
-hc keybind $Mod-Shift-h     shift left
-hc keybind $Mod-Shift-j     shift down
-hc keybind $Mod-Shift-k     shift up
-hc keybind $Mod-Shift-l     shift right
+# moving clients Single Monitor
+# hc keybind $Mod-Shift-Left  shift left
+# hc keybind $Mod-Shift-Down  shift down
+# hc keybind $Mod-Shift-Up    shift up
+# hc keybind $Mod-Shift-Right shift right
+# hc keybind $Mod-Shift-h     shift left
+# hc keybind $Mod-Shift-j     shift down
+# hc keybind $Mod-Shift-k     shift up
+# hc keybind $Mod-Shift-l     shift right
+
+#moving clients Dual Monitor
+hc keybind $Mod-Shift-h chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
+hc keybind $Mod-Shift-Left chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
+hc keybind $Mod-Shift-j chain , lock , shift_to_monitor -d , focus_monitor -d , unlock
+hc keybind $Mod-Shift-Down chain , lock , shift_to_monitor -d , focus_monitor -d , unlock
+hc keybind $Mod-Shift-k chain , lock , shift_to_monitor -u , focus_monitor -u , unlock
+hc keybind $Mod-Shift-Up chain , lock , shift_to_monitor -u , focus_monitor -u , unlock
+hc keybind $Mod-Shift-l chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
+hc keybind $Mod-Shift-Right chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 
 # splitting frames
 # create an empty frame at the specified direction
@@ -109,14 +119,15 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
 tag_names=( {1..10} )
-#tag_names=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+#tag_names=("www" "text" "gimp" "meld" "vlc" "mail" "vb" "image" "code" "chat")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
-#tag_names=("\61612" "\61899" "\61947" "\61635" "\61502" "\61501" "\61705" "\61564" "\62150" "\61872" )
 
 #Qwerty
-#tag_keys=( {1..10} 0 )
+tag_keys=( {1..10} 0 )
+
 #Belgian azerty
-tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla agrave )
+#tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla agrave )
+
 #French azerty
 #tag_keys=( ampersand eacute quotedbl apostrophe parenleft minus egrave underscore ccedilla agrave )
 
@@ -129,56 +140,6 @@ for i in ${!tag_names[@]} ; do
         hc keybind "$Mod-Shift-$key" chain , move_index "$i" , use_index "$i"
     fi
 done
-
-
-#NOT NEEDED ANYMORE - See tag_keys variable
-#FRENCH AZERTY KEYBOARD GOTO TAG
-# hc keybind "$Mod-ampersand" use_index 0
-# hc keybind "$Mod-eacute" use_index 1
-# hc keybind "$Mod-quotedbl" use_index 2
-# hc keybind "$Mod-apostrophe" use_index 3
-# hc keybind "$Mod-parenleft" use_index 4
-# hc keybind "$Mod-minus" use_index 5
-# hc keybind "$Mod-egrave" use_index 6
-# hc keybind "$Mod-underscore" use_index 7
-# hc keybind "$Mod-ccedilla" use_index 8
-# hc keybind "$Mod-agrave" use_index 9
-
-#FRENCH AZERTY KEYBOARD MOVE TO TAG
-# hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
-# hc keybind "$Mod-Shift-eacute" chain , move_index 1 ,  use_index 1
-# hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 ,  use_index 2
-# hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 ,  use_index 3
-# hc keybind "$Mod-Shift-parenleft" chain , move_index 4 ,  use_index 4
-# hc keybind "$Mod-Shift-minus" chain , move_index 5,  use_index 5
-# hc keybind "$Mod-Shift-egrave" chain , move_index 6 ,  use_index 6
-# hc keybind "$Mod-Shift-underscore" chain , move_index 7 ,  use_index 7
-# hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 ,  use_index 8
-# hc keybind "$Mod-Shift-agrave" chain , move_index 9 ,  use_index 9
-
-#BELGIAN AZERTY KEYBOARD GOTO TAG
-# hc keybind "$Mod-ampersand" use_index 0
-# hc keybind "$Mod-eacute" use_index 1
-# hc keybind "$Mod-quotedbl" use_index 2
-# hc keybind "$Mod-apostrophe" use_index 3
-# hc keybind "$Mod-parenleft" use_index 4
-# hc keybind "$Mod-section" use_index 5
-# hc keybind "$Mod-egrave" use_index 6
-# hc keybind "$Mod-exclam" use_index 7
-# hc keybind "$Mod-ccedilla" use_index 8
-# hc keybind "$Mod-agrave" use_index 9
-
-#BELGIAN AZERTY KEYBOARD MOVE TO TAG
-# hc keybind "$Mod-Shift-ampersand" chain , move_index 0 ,  use_index 0
-# hc keybind "$Mod-Shift-eacute" chain , move_index 1 , use_index 1
-# hc keybind "$Mod-Shift-quotedbl" chain , move_index 2 , use_index 2
-# hc keybind "$Mod-Shift-apostrophe" chain , move_index 3 , use_index 3
-# hc keybind "$Mod-Shift-parenleft" chain , move_index 4 , use_index 4
-# hc keybind "$Mod-Shift-section" chain , move_index 5 , use_index 5
-# hc keybind "$Mod-Shift-egrave" chain , move_index 6 , use_index 6
-# hc keybind "$Mod-Shift-exclam" chain , move_index 7 , use_index 7
-# hc keybind "$Mod-Shift-ccedilla" chain , move_index 8 , use_index 8
-# hc keybind "$Mod-Shift-agrave" chain , move_index 9 , use_index 9
 
 # layouting
 hc keybind $Mod-r remove
@@ -203,44 +164,43 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         use_index +1 --skip-visible
 hc keybind $Mod-Shift-Tab   use_index -1 --skip-visible
+hc keybind Mod1-Tab         cycle_all +1
+hc keybind Mod1-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
-# theme
-hc attr theme.tiling.reset 1
-hc attr theme.floating.reset 1
-hc set frame_border_active_color '#222222'
-hc set frame_border_normal_color '#101010'
-hc set frame_bg_normal_color '#565656'
-hc set frame_bg_active_color '#6790EB'
-hc set frame_border_width 0
-hc set always_show_frame 0
-hc set frame_bg_transparent 1
-hc set frame_transparent_width 0
-hc set frame_gap 0
-hc set focus_follows_mouse 1
-
-#Customize herbstluftwm
+# Attribute
 hc attr theme.active.color '#6790EB'
-hc attr theme.normal.color '#454545'
-hc attr theme.urgent.color orange
-hc attr theme.inner_width 1
-hc attr theme.inner_color black
-hc attr theme.border_width 3
-hc attr theme.floating.border_width 4
-hc attr theme.floating.outer_width 1
-hc attr theme.floating.outer_color black
 hc attr theme.active.inner_color '#0B0B21'
 hc attr theme.active.outer_color '#6790EB'
 hc attr theme.background_color '#141414'
+hc attr theme.border_width 3
+hc attr theme.floating.reset 1
+hc attr theme.floating.border_width 4
+hc attr theme.floating.outer_width 1
+hc attr theme.floating.outer_color black
+hc attr theme.inner_color black
+hc attr theme.inner_width 1
+hc attr theme.normal.color '#454545'
+hc attr theme.urgent.color orange
+hc attr theme.tiling.reset 1
 
-#Bar & window gaps
-hc pad 0 30 0 0
-hc set window_gap 5
+# Set
+hc set always_show_frame 1
+hc set focus_follows_mouse 1
+hc set frame_border_active_color '#6790EB'
+hc set frame_border_normal_color '#101010'
+hc set frame_bg_normal_color '#454545'
+hc set frame_bg_active_color '#6790EB'
+hc set frame_border_width 3
+hc set frame_bg_transparent 1
+hc set frame_transparent_width 0
+hc set frame_gap 5
 hc set frame_padding 0
-hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
+hc set smart_frame_surroundings 1
+hc set smart_window_surroundings 0
+hc set window_gap 5
 
 # rules
 hc unrule -F
@@ -273,40 +233,6 @@ hc set tree_style '╾│ ├└╼─┐'
 # unlock, just to be sure
 hc unlock
 
-#TRIALS
-
-#dual monitor settings
-#hc detect_monitors
-#hc set_monitors 1920x1080+0+0 1920x1080+1920+30
-
-# Set up multi monitors
-# while [[ $(hc list_monitors | wc -l) -gt 1 ]]; do
-#     hc remove_monitor 1
-# done
-
-# tags
-# NUM_MONS=$(xrandr --current | grep "^\w.* connected" | wc -l)
-# MON_RES=( $(xrandr --current | grep "^\w.* connected" | awk '{print $3}') )
-# MON_NUMS=$( python -c "for i in range(${NUM_MONS}): print(i)" )
-#
-# for i in ${MON_NUMS[@]} ; do
-#     echo "${i}"
-#     if [[ $i == '0' ]]; then
-#         hc move_monitor $i ${MON_RES[$i]};
-#     else
-#         hc add_monitor ${MON_RES[$i]};
-#     fi
-# done
-
-#launching polybar on all monitors
-#~/.config/polybar/launch.sh
-# panel=~/.config/polybar/launch.sh
-# [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-# for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-#     # start it on each monitor
-#     "$panel" $monitor &
-# done
-
 #Dualmonitor setup
 # Find out your monitor name with xrandr or arandr (save and you get this line)
 #xrandr --output VGA-1 --primary --mode 1360x768 --pos 0x0 --rotate normal
@@ -314,9 +240,12 @@ hc unlock
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
-#monitor setup
+#Dual monitor setup
 # hc detect_monitors
-#hc set_monitors 1920x1080+0+0 1920x1080+1920+30
+#hc set_monitors 1920x1080+0+0 1920x1080+1920+0
+#room for polybar on both monitors
+hc pad 0 30
+hc pad 1 30
 
 #launching polybar
 ~/.config/polybar/launch.sh
