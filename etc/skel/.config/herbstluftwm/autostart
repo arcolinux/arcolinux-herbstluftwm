@@ -173,6 +173,8 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         use_index +1 --skip-visible
 hc keybind $Mod-Shift-Tab   use_index -1 --skip-visible
+hc keybind Control-Mod1-Left    use_index -1 --skip-visible
+hc keybind Control-Mod1-Right   use_index +1 --skip-visible
 hc keybind Mod1-Tab         cycle_all +1
 hc keybind Mod1-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
