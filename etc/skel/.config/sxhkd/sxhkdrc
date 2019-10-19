@@ -340,6 +340,15 @@ ctrl + shift + Print
 
 
 #########################
+#     FUNCTION KEYS   #
+#########################
+
+#xfce4-terminal dropdown
+F12
+    xfce4-terminal --drop-down
+
+
+#########################
 #     MULTIMEDIA KEYS   #
 #########################
 
