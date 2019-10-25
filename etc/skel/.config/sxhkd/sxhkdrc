@@ -1,15 +1,10 @@
-#########################
-# SUPER + FUNCTION KEYS #
-#########################
-# if you want to assign applications to specific tags or workspaces
-# add a command behind the application to focus on that workspace if required
-# index 0 corresponds to tag or workspace 1
-# index 1 corresponds to tag or workspace	2
-# example
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM 
+#################################################################
 
-# Vivaldi
-#super + F1
-#	vivaldi-stable & herbstclient use_index 0
+#################################################################
+# SUPER + FUNCTION KEYS 
+#################################################################
 
 # Vivaldi
 super + F1
@@ -59,10 +54,9 @@ super + F11
 super + F12
     rofi -show run
 
-
-#########################
-# SUPER + ... KEYS      #
-#########################
+#################################################################
+# SUPER + ... KEYS      
+#################################################################
 
 #Atom
 super + e
@@ -72,7 +66,7 @@ super + e
 super + w
     vivaldi-stable
 
-#conflicts with herbstluftwm
+#conflicts 
 #Conky-toggle
 #super + c
 #    conky-toggle
@@ -90,6 +84,19 @@ super + x
 super + Pause
     oblogout
 
+#Oblogout
+ctrl + alt + Delete
+   oblogout
+
+#conflicts
+#Rofi theme selector
+#super + r
+#    rofi-theme-selector
+
+#Urxvt
+super + t
+    urxvt
+
 #Pavucontrol
 super + v
     pavucontrol
@@ -98,40 +105,31 @@ super + v
 super + m
     pragha
 
-#conflicts with herbstluftwm
-#Rofi theme selector
-#super + r
-#    rofi-theme-selector
-
 #Termite
 super + Return
     termite
-
-#conflicts with herbstluftwm
-#Thunar
-#super + f
-#    thunar
-
-#Urxvt
-super + t
-    urxvt
 
 #Xkill
 super + Escape
     xkill
 
 #Keyboard dependent
+#termite
 #super + KP_Enter
-#	  termite
+#	termite
 
-
-#########################
-# SUPER + SHIFT KEYS    #
-#########################
+#################################################################
+# SUPER + SHIFT KEYS    
+#################################################################
 
 #File-Manager
 super + shift + Return
 	thunar
+
+#Keyboard dependent
+#File-Manager
+#super + shift + KP_Enter
+#	thunar
 
 #dmenu
 super + shift + d
@@ -146,9 +144,9 @@ super + shift + s
 #	thunar
 
 
-#########################
-# CONTROL + ALT KEYS    #
-#########################
+#################################################################
+# CONTROL + ALT KEYS    
+#################################################################
 
 #am-rotate-conky
 ctrl + alt + Next
@@ -161,6 +159,9 @@ ctrl + alt + Prior
 #Atom
 ctrl + alt + w
      atom
+#File-Manager
+ctrl + alt + b
+     thunar
 
 #Catfish
 ctrl + alt + c
@@ -169,10 +170,6 @@ ctrl + alt + c
 #Chromium
 ctrl + alt + g
     chromium -no-default-browser-check
-
-#Compton Toggle
-ctrl + alt + o
-    ~/.config/herbstluftwm/scripts/compton-toggle.sh
 
 #Evolution
 ctrl + alt + e
@@ -186,13 +183,21 @@ ctrl + alt + f
 ctrl + alt + i
      nitrogen
 
-#Oblogout
-ctrl + alt + Delete
-   oblogout
+#slim-lock
+ctrl + alt + k
+     slimlock
+
+#Slimlock
+ctrl + alt + l
+    slimlock
 
 #Pamac-manager
 ctrl + alt + p
     pamac-manager
+
+#Xfce4-settings-manager
+ctrl + alt + m
+     xfce4-settings-manager
 
 #Pulse Audio Control
 ctrl + alt + u
@@ -202,29 +207,17 @@ ctrl + alt + u
 ctrl + alt + r
   rofi-theme-selector
 
-#Slimlock
-ctrl + alt + k
-     slimlock
-
-#Slimlock
-ctrl + alt + l
-    slimlock
-
 #Spotify
 ctrl + alt + s
    spotify
 
 #Termite
 ctrl + alt + Return
-     termite
-
-#Termite
-ctrl + alt + t
     termite
 
-#Thunar
-ctrl + alt + b
-     thunar
+#termite
+ctrl + alt + t
+    termite
 
 #Vivaldi
 ctrl + alt + v
@@ -234,18 +227,16 @@ ctrl + alt + v
 ctrl + alt + a
     xfce4-appfinder
 
-#Xfce4-settings-manager
-ctrl + alt + m
-     xfce4-settings-manager
 
 #Keyboard dependent
+#termite
 #ctrl + alt + KP_Enter
 #     termite
 
 
-#########################
-# ALT + ... KEYS        #
-#########################
+#################################################################
+# ALT + ... KEYS        
+#################################################################
 
 #Wallpaper trash
 alt + t
@@ -288,9 +279,9 @@ alt + F3
     xfce4-appfinder
 
 
-#########################
-#VARIETY KEYS WITH PYWAL#
-#########################
+#################################################################
+#VARIETY KEYS WITH PYWAL
+#################################################################
 
 #Wallpaper trash
 alt + shift + t
@@ -312,19 +303,18 @@ alt + shift + f
 alt + shift + u
     wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
-
-#########################
-# CONTROL + SHIFT KEYS  #
-#########################
+#################################################################
+# CONTROL + SHIFT KEYS  
+#################################################################
 
 #Xcfe4-TaskManager
 ctrl + shift + Escape
     xfce4-taskmanager
 
 
-#########################
-#     SCREENSHOTS       #
-#########################
+#################################################################
+#     SCREENSHOTS       
+#################################################################
 
 #Scrot
 Print
@@ -339,18 +329,18 @@ ctrl + shift + Print
      gnome-screenshot -i
 
 
-#########################
-#     FUNCTION KEYS   #
-#########################
+#################################################################
+#     FUNCTION KEYS   
+#################################################################
 
 #xfce4-terminal dropdown
 F12
     xfce4-terminal --drop-down
 
 
-#########################
-#     MULTIMEDIA KEYS   #
-#########################
+#################################################################
+#     MULTIMEDIA KEYS   
+#################################################################
 
 #Raises volume
 XF86AudioRaiseVolume
@@ -365,28 +355,28 @@ XF86AudioMute
     amixer -D pulse set Master 1+ toggle
 
 #Playerctl works for Pragha, Spotify and others
-#DELETE the line for mpc if you want to use playerctl
-#putting a hashtag in front of the mpc line will NOT work
-#mpc works for ncmpcpp
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
 
 #PLAY
 XF86AudioPlay
-    #mpc toggle
     playerctl play-pause
 
 #Next
 XF86AudioNext
-     #mpc next
-     playerctl next
+    playerctl next
 
 #previous
 XF86AudioPrev
-    #mpc prev
     playerctl previous
 
 #Stop
 XF86AudioStop
-    #mpc stop
     playerctl stop
 
 #Brightness up
@@ -397,7 +387,6 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
-
 #########################
 #        POLYBAR        #
 #########################
@@ -406,7 +395,38 @@ XF86MonBrightnessDown
 super + y
     polybar-msg cmd toggle
 
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
 
-#########################
-#   DESKTOP SPECIFIC    #
-#########################
+#################################################################
+# CTRL + ALT KEYS    
+#################################################################
+
+#Compton Toggle
+ctrl + alt + o
+    ~/.config/herbstluftwm/scripts/compton-toggle.sh
+
+#################################################################
+# SUPER + KEYS      
+#################################################################
+
+# if you want to assign applications to specific tags or workspaces
+# add a command behind the application to focus on that workspace if required
+# index 0 corresponds to tag or workspace 1
+# index 1 corresponds to tag or workspace	2
+# example
+
+# Vivaldi
+#super + F1
+#	vivaldi-stable & herbstclient use_index 0
+
+
+
+#################################################################
+#################################################################
+##################   AZERTY/QWERTY/ ... KEYBOARD#################
+#################################################################
+#################################################################
