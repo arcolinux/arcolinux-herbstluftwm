@@ -71,7 +71,7 @@ super + w
 #super + c
 #    conky-toggle
 
-#conflicts with herbstluftwm
+#conflicts
 #Htop
 #super + h
 #    urxvt 'htop task manager' -e htop
