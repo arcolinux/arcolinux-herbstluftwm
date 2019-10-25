@@ -66,10 +66,9 @@ super + e
 super + w
     vivaldi-stable
 
-#conflicts 
 #Conky-toggle
-#super + c
-#    conky-toggle
+super + c
+    conky-toggle
 
 #conflicts
 #Htop
@@ -159,6 +158,7 @@ ctrl + alt + Prior
 #Atom
 ctrl + alt + w
      atom
+
 #File-Manager
 ctrl + alt + b
      thunar

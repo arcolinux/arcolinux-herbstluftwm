@@ -50,9 +50,6 @@ hc() {
 
 hc emit_hook reload
 
-# horizontal tiling as standard
-hc set_layout horizontal
-
 # KEYBINDINGS
 
 # remove all existing keybindings
@@ -66,11 +63,12 @@ hc keybind $Mod-Shift-x quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-q close
+
 #Most of the keybindings have been set in sxhkd config file
 #you can set them also here
-#TERMINAL=termite
-#hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
-#hc keybind Control-Mod1-t spawn ${TERMINAL:-xterm}
+
+#reload sxhkd:
+hc keybind $Mod-Shift-s  pkill -USR1 -x sxhkd
 
 # MOVEMENTS
 
@@ -97,10 +95,10 @@ hc keybind $Mod-Shift-l     shift right
 # moving clients to ... on dual monitor
 # hc keybind $Mod-Shift-h chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
 # hc keybind $Mod-Shift-Left chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
-# hc keybind $Mod-Shift-j chain , lock , shift_to_monitor -d , focus_monitor -d , unlock
-# hc keybind $Mod-Shift-Down chain , lock , shift_to_monitor -d , focus_monitor -d , unlock
-# hc keybind $Mod-Shift-k chain , lock , shift_to_monitor -u , focus_monitor -u , unlock
-# hc keybind $Mod-Shift-Up chain , lock , shift_to_monitor -u , focus_monitor -u , unlock
+# hc keybind $Mod-Shift-j chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
+# hc keybind $Mod-Shift-Down chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
+# hc keybind $Mod-Shift-k chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
+# hc keybind $Mod-Shift-Up chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 # hc keybind $Mod-Shift-l chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 # hc keybind $Mod-Shift-Right chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 
@@ -148,6 +146,9 @@ tag_keys=( {1..10} 0 )
 hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
+    # horizontal tiling as standard
+    hc set_layout horizontal
+    hc set default_frame_layout 1
     key="${tag_keys[$i]}"
     if ! [ -z "$key" ] ; then
         hc keybind "$Mod-$key" use_index "$i"
@@ -177,11 +178,13 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         use_index +1 --skip-visible
 hc keybind $Mod-Shift-Tab   use_index -1 --skip-visible
-hc keybind Control-Mod1-Left    use_index -1 --skip-visible
-hc keybind Control-Mod1-Right   use_index +1 --skip-visible
-hc keybind Mod1-Tab         cycle_all +1
-hc keybind Mod1-Shift-Tab   cycle_all -1
-hc keybind $Mod-c cycle
+hc keybind Control-Mod1-Left    focus left
+hc keybind Control-Mod1-Up      focus up
+hc keybind Control-Mod1-Right   focus right
+hc keybind Control-Mod1-Down    focus down
+hc keybind Mod1-Tab         use_index +1 --skip-visible
+hc keybind Mod1-Shift-Tab   use_index -1 --skip-visible
+#hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
 #reset prior to setting the theme
@@ -256,7 +259,7 @@ hc unlock
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
-#Dual monitor setup
+#Dualmonitor setup
 # hc detect_monitors
 #hc set_monitors 1920x1080+0+0 1920x1080+1920+0
 
