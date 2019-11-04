@@ -23,7 +23,8 @@ xsetroot -cursor_name left_ptr &
 sxhkd -c ~/.config/herbstluftwm/sxhkd/sxhkdrc &
 
 #feh --bg-scale ~/.config/herbstluftwm/wall.png &
-feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
+feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
 conky -c $HOME/.config/herbstluftwm/system-overview &
 run variety &
 nm-applet &
