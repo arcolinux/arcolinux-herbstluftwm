@@ -68,8 +68,8 @@ hc keybind $Mod-q close
 #Most of the keybindings have been set in sxhkd config file
 #you can set them also here
 
-#reload sxhkd:
-hc keybind $Mod-Shift-s  pkill -USR1 -x sxhkd
+#reload sxhkd - see keybind in sxhkd
+#hc keybind $Mod-Shift-s  pkill -USR1 -x sxhkd
 
 # MOVEMENTS
 
