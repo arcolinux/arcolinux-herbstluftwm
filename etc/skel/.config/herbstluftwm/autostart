@@ -32,7 +32,7 @@ pamac-tray &
 xfce4-power-manager &
 numlockx on &
 blueberry-tray &
-volumeicon &
+run volumeicon &
 # nitrogen --restore &
 # caffeine &
 # vivaldi-stable &
