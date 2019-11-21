@@ -11,8 +11,8 @@ function run {
 #setxkbmap -layout be
 
 #Autostart applications
-pkill -u $USER '^compton$'
-compton  --config $HOME/.config/herbstluftwm/compton.conf &
+pkill -u $USER '^picom$'
+picom  --config $HOME/.config/herbstluftwm/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
