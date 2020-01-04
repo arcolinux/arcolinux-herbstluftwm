@@ -427,6 +427,27 @@ ctrl + alt + o
 #super + F1
 #	vivaldi-stable & herbstclient use_index 0
 
+#################################################################
+# HLWM Terminate Keybindings
+#################################################################
+
+#close window/application
+super + q
+    herbstclient close
+
+#close window/application
+super + shift + q 
+    herbstclient close    
+
+#realod herbstluftwm
+super + shift +r
+    herbstclient reload
+
+#Xkill
+super + shift + x
+    herbstclient quit        
+
+
 
 
 #################################################################
