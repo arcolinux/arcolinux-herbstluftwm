@@ -60,6 +60,10 @@ hc keyunbind --all
 #Mod=Mod1  # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
 
+# hc keybind $Mod-Shift-x quit
+# hc keybind $Mod-Shift-r reload
+# hc keybind $Mod-Shift-q close
+# hc keybind $Mod-q close
 
 #Most of the keybindings have been set in sxhkd config file
 #you can set them also here
@@ -125,6 +129,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 #names to display in menu
 tag_names=( {1..10} )
 #tag_names=("www" "text" "gimp" "meld" "vlc" "mail" "vb" "image" "code" "chat")
+tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Thunar" "Music")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
 #keys to press to get to the tags
@@ -236,6 +241,17 @@ hc rule focus=on # normally focus new clients
 # hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag=8
 # hc rule class~'(Evolution|Geary)' tag=9
 # hc rule class=Spotify tag=10
+
+#assign applications to workspaces or tags
+#hc rule class~'(firefox|brave|Brave-browser|Vivaldi-snapshot|Chromium|Google-chrome)' tag='Web' switchtag=on focus=on
+#hc rule class='Spotify' tag='Music' switchtag=on focus=on
+#hc rule class='Subl3' tag='Edit' switchtag=on focus=on
+#hc rule class~'(discord|Discord|TelegramDesktop)' tag='Chat' switchtag=on focus=on
+#hc rule class~'(vlc|mpv|Mpv)' tag='Video' switchtag=on focus=on
+#hc rule class~'(VirtualBox Manager|Vmplayer)' tag='Vb' switchtag=on focus=on
+#hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag='Thunar' switchtag=on focus=on
+#hc rule class~'(Evolution|Geary)' tag='Mail' switchtag=on focus=on
+#hc rule class~'(gimp|Gimp)' tag='Image' switchtag=on focus=on
 
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
