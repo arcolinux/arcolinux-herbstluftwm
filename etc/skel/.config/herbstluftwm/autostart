@@ -129,7 +129,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 #names to display in menu
 tag_names=( {1..10} )
 #tag_names=("www" "text" "gimp" "meld" "vlc" "mail" "vb" "image" "code" "chat")
-tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Thunar" "Music")
+#tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Thunar" "Music")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
 #keys to press to get to the tags
@@ -230,19 +230,19 @@ hc unrule -F
 hc rule focus=on # normally focus new clients
 #hc rule focus=off # normally do not focus new clients
 
-#assign applications to workspaces or tags
-# hc rule class~'(firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome)' tag=1
-# hc rule class~'(Atom|Subl3)' tag=2
-# hc rule class=Inkscape tag=3
-# hc rule class=Gimp tag=4
-# hc rule class~'(Meld|ristretto|Nitrogen)' tag=5
-# hc rule class=vlc tag=6
-# hc rule class~'(VirtualBox Manager|Vmplayer)' tag=7
-# hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag=8
-# hc rule class~'(Evolution|Geary)' tag=9
-# hc rule class=Spotify tag=10
+#assign applications to workspaces or tags -using numbers for tags
+#hc rule class~'(firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome)' tag=1
+#hc rule class~'(Atom|Subl3)' tag=2
+#hc rule class=Inkscape tag=3
+#hc rule class=Gimp tag=4
+#hc rule class~'(Meld|ristretto|Nitrogen)' tag=5
+#hc rule class=vlc tag=6
+#hc rule class~'(VirtualBox Manager|Vmplayer)' tag=7
+#hc rule class~'(Thunar|Nemo|Caja|Nautilus)' tag=8
+#hc rule class~'(Evolution|Geary)' tag=9
+#hc rule class=Spotify tag=10
 
-#assign applications to workspaces or tags
+#assign applications to workspaces or tags - using names for tags
 #hc rule class~'(firefox|brave|Brave-browser|Vivaldi-snapshot|Chromium|Google-chrome)' tag='Web' switchtag=on focus=on
 #hc rule class='Spotify' tag='Music' switchtag=on focus=on
 #hc rule class='Subl3' tag='Edit' switchtag=on focus=on
@@ -261,6 +261,7 @@ hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class=Oblogout fullscreen=on
 hc rule class=Insync pseudotile=on
+hc rule windowrole=xfce4-terminal-dropdown manage=off
 hc rule class=VirtualBox fullscreen=on
 
 # unlock, just to be sure
