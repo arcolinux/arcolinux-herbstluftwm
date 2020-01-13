@@ -231,16 +231,16 @@ hc rule focus=on # normally focus new clients
 #hc rule focus=off # normally do not focus new clients
 
 #assign applications to workspaces or tags -using numbers for tags
-#hc rule class~'(Navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave-browser)' tag=1
-#hc rule class~'(Subl3|Atom|geany|brackets|code-oss|code)' tag=2
-#hc rule class~'(inkscape|nomacs|ristretto|nitrogen|feh)' tag=3
-#hc rule class=Gimp tag=4
-#hc rule class~'(org.gnome.meld)' tag=5
-#hc rule class=vlc tag=6
-#hc rule class~'(VirtualBox Manager|VirtualBox Machine|Vmplayer)' tag=7
-#hc rule class~'(thunar|nemo|caja|org.gnome.Nautilus|pcmanfm|pcmanfm-qt)' tag=8
-#hc rule class~'(evolution|geary|Mail|Thunderbird)' tag=9
-#hc rule class~'(spotify|pragha|clementine|deadbeef|audacious)' tag=10
+hc rule class~'(Navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave-browser)' tag=1
+hc rule class~'(Subl3|Atom|geany|brackets|code-oss|code)' tag=2
+hc rule class~'(inkscape|Inkscape|nomacs|ristretto|nitrogen|feh)' tag=3
+hc rule class=Gimp tag=4
+hc rule class~'(org.gnome.meld|Meld)' tag=5
+hc rule class=vlc tag=6
+hc rule class~'(VirtualBox Manager|VirtualBox Machine|Vmplayer)' tag=7
+hc rule class~'(thunar|Thunar|nemo|caja|org.gnome.Nautilus|pcmanfm|pcmanfm-qt)' tag=8
+hc rule class~'(Evolution|evolution|geary|Mail|Thunderbird)' tag=9
+hc rule class~'(spotify|Spotify|pragha|clementine|deadbeef|audacious)' tag=10
 
 #assign applications to workspaces or tags - using names for tags
 #hc rule class~'(firefox|brave|Brave-browser|Vivaldi-snapshot|Chromium|Google-chrome)' tag='Web' switchtag=on focus=on
