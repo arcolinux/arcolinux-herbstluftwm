@@ -231,16 +231,26 @@ hc rule focus=on # normally focus new clients
 #hc rule focus=off # normally do not focus new clients
 
 #assign applications to workspaces or tags -using numbers for tags
-hc rule class~'(Navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave-browser)' tag=1
-hc rule class~'(Subl3|Atom|geany|brackets|code-oss|code)' tag=2
-hc rule class~'(inkscape|Inkscape|nomacs|ristretto|nitrogen|feh)' tag=3
-hc rule class=Gimp tag=4
-hc rule class~'(org.gnome.meld|Meld)' tag=5
-hc rule class=vlc tag=6
-hc rule class~'(VirtualBox Manager|VirtualBox Machine|Vmplayer)' tag=7
-hc rule class~'(thunar|Thunar|nemo|caja|org.gnome.Nautilus|pcmanfm|pcmanfm-qt)' tag=8
-hc rule class~'(Evolution|evolution|geary|Mail|Thunderbird)' tag=9
-hc rule class~'(spotify|Spotify|pragha|clementine|deadbeef|audacious)' tag=10
+hc rule class~'(Navigator|Firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome|Brave|Brave-browser)' switchtag=on focus=on tag=1
+hc rule class~'(navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave|brave-browser)' switchtag=on focus=on tag=1
+hc rule class~'(Atom|Subl3|Geany|Brackets|Code-oss|Code|TelegramDesktop|Discord)' switchtag=on focus=on tag=2
+hc rule class~'(atom|subl3|geany|brackets|code-oss|code|telegramdesktop|discord)' switchtag=on focus=on tag=2
+hc rule class~'(Inkscape|Nomacs|Ristretto|Nitrogen|Feh)' switchtag=on focus=on tag=3
+hc rule class~'(inkscape|nomacs|ristretto|nitrogen|feh)' switchtag=on focus=on tag=3
+hc rule class~'(Gimp)' switchtag=on focus=on tag=4
+hc rule class~'(gimp)' switchtag=on focus=on tag=4
+hc rule class~'(Meld|org.gnome.Meld)' switchtag=on focus=on tag=5
+hc rule class~'(meld|org.gnome.meld)' switchtag=on focus=on tag=5
+hc rule class~'(Vlc|Mpv)' switchtag=on focus=on tag=6
+hc rule class~'(vlc|mpv)' switchtag=on focus=on tag=6
+hc rule class~'(VirtualBox Manager|VirtualBox Machine|Vmplayer)' switchtag=on focus=on tag=7
+hc rule class~'(virtualbox manager|virtualbox machine|vmplayer)' switchtag=on focus=on tag=7
+hc rule class~'(Thunar|Nemo|Caja|Nautilus|org.gnome.Nautilus|Pcmanfm|Pcmanfm-qt)' switchtag=on focus=on tag=8
+hc rule class~'(thunar|nemo|caja|nautilus|org.gnome.nautilus|pcmanfm|pcmanfm-qt)' switchtag=on focus=on tag=8
+hc rule class~'(Evolution|Geary|Mail|Thunderbird)' switchtag=on focus=on tag=9
+hc rule class~'(evolution|geary|mail|thunderbird)' switchtag=on focus=on tag=9
+hc rule class~'(Spotify|Pragha|Clementine|Deadbeef|Audacious)' switchtag=on focus=on tag=10
+hc rule class~'(spotify|pragha|clementine|deadbeef|audacious)' switchtag=on focus=on tag=10
 
 #assign applications to workspaces or tags - using names for tags
 #hc rule class~'(firefox|brave|Brave-browser|Vivaldi-snapshot|Chromium|Google-chrome)' tag='Web' switchtag=on focus=on
