@@ -258,8 +258,10 @@ hc rule focus=on # normally focus new clients
 
 # hc rule class~'(Navigator|Firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome|Brave|Brave-browser)' tag='Web' switchtag=on focus=on
 # hc rule class~'(navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave|brave-browser)' tag='Web' switchtag=on focus=on
-# hc rule class~'(Atom|Subl3|Geany|Brackets|Code-oss|Code|TelegramDesktop|Discord)' tag='Chat' switchtag=on focus=on
-# hc rule class~'(atom|subl3|geany|brackets|code-oss|code|telegramdesktop|discord)' tag='Chat' switchtag=on focus=on
+# hc rule class~'(TelegramDesktop|Discord)' tag='Chat' switchtag=on focus=on
+# hc rule class~'(telegramdesktop|discord)' tag='Chat' switchtag=on focus=on
+# hc rule class~'(Atom|Subl3|Geany|Brackets|Code-oss|Code)' tag='Edit' switchtag=on focus=on
+# hc rule class~'(atom|subl3|geany|brackets|code-oss|code)' tag='Edit' switchtag=on focus=on
 # hc rule class~'(Inkscape|Nomacs|Ristretto|Nitrogen|Feh)' tag='Image' switchtag=on focus=on
 # hc rule class~'(inkscape|nomacs|ristretto|nitrogen|feh)' tag='Image' switchtag=on focus=on
 # hc rule class~'(Gimp)' tag='Image' switchtag=on focus=on
