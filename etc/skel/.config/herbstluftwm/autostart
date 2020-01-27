@@ -128,7 +128,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 #names to display in menu
 tag_names=( {1..10} )
-#tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Thunar" "Music")
+#tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Files" "Music")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
 #keys to press to get to the tags
