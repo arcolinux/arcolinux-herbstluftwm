@@ -128,7 +128,6 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 #names to display in menu
 tag_names=( {1..10} )
-#tag_names=("Web" "Edit/chat" "Image" "Gimp" "Meld" "Video" "Vb" "Files" "Mail"  "Music")
 #tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Thunar" "Music")
 #tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
@@ -255,16 +254,16 @@ hc rule focus=on # normally focus new clients
 # hc rule class~'(spotify|pragha|clementine|deadbeef|audacious)' tag=10 switchtag=on focus=on
 
 # assign applications to workspaces or tags - using names for tags
-# These are used then -- tag_names=("Web" "Edit/chat" "Image" "Gimp" "Meld" "Video" "Vb" "Files" "Mail"  "Music")
+# These are used then -- #tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Files" "Music")
 
 # hc rule class~'(Navigator|Firefox|Vivaldi-stable|Vivaldi-snapshot|Chromium|Google-chrome|Brave|Brave-browser)' tag='Web' switchtag=on focus=on
 # hc rule class~'(navigator|firefox|vivaldi-stable|vivaldi-snapshot|chromium|google-chrome|brave|brave-browser)' tag='Web' switchtag=on focus=on
-# hc rule class~'(Atom|Subl3|Geany|Brackets|Code-oss|Code|TelegramDesktop|Discord)' tag='Edit/chat' switchtag=on focus=on
-# hc rule class~'(atom|subl3|geany|brackets|code-oss|code|telegramdesktop|discord)' tag='Edit/chat' switchtag=on focus=on
+# hc rule class~'(Atom|Subl3|Geany|Brackets|Code-oss|Code|TelegramDesktop|Discord)' tag='Chat' switchtag=on focus=on
+# hc rule class~'(atom|subl3|geany|brackets|code-oss|code|telegramdesktop|discord)' tag='Chat' switchtag=on focus=on
 # hc rule class~'(Inkscape|Nomacs|Ristretto|Nitrogen|Feh)' tag='Image' switchtag=on focus=on
 # hc rule class~'(inkscape|nomacs|ristretto|nitrogen|feh)' tag='Image' switchtag=on focus=on
-# hc rule class~'(Gimp)' tag='Gimp' switchtag=on focus=on
-# hc rule class~'(gimp)' tag='Gimp' switchtag=on focus=on
+# hc rule class~'(Gimp)' tag='Image' switchtag=on focus=on
+# hc rule class~'(gimp)' tag='Image' switchtag=on focus=on
 # hc rule class~'(Meld|org.gnome.Meld)' tag='Meld' switchtag=on focus=on
 # hc rule class~'(meld|org.gnome.meld)' tag='Meld' switchtag=on focus=on
 # hc rule class~'(Vlc|Mpv)' tag='Video' switchtag=on focus=on
