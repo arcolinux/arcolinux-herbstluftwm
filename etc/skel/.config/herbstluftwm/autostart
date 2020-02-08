@@ -22,6 +22,7 @@ xsetroot -cursor_name left_ptr &
 #keybindings are in config of sxhkd - interchangeable with other TWM
 sxhkd -c ~/.config/herbstluftwm/sxhkd/sxhkdrc &
 
+dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 #feh --bg-scale ~/.config/herbstluftwm/wall.png &
 feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
@@ -288,6 +289,8 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class=Oblogout fullscreen=on
 hc rule class=Insync pseudotile=on
 hc rule class=VirtualBox fullscreen=on
+hc rule class=Arcolinux-tweak-tool.py pseudotile=on
+hc rule class=Arcolinux-welcome-app.py pseudotile=on
 # No solution yet to dropdown xfce4-terminal
 # hc rule windowrole=xfce4-terminal-dropdown manage=off
 
