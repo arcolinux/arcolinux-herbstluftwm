@@ -417,9 +417,9 @@ super + y
 # CTRL + ALT KEYS
 #################################################################
 
-#Compton Toggle
+#Picom Toggle
 ctrl + alt + o
-    ~/.config/herbstluftwm/scripts/compton-toggle.sh
+    ~/.config/herbstluftwm/scripts/picom-toggle.sh
 
 #################################################################
 # SUPER + KEYS
