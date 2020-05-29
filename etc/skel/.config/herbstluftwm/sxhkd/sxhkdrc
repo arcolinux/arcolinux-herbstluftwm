@@ -145,7 +145,7 @@ ctrl + alt + w
 
 #arcolinux-tweak-tool
 ctrl + alt + e
-     arcolinux-tweak-tool  
+     arcolinux-tweak-tool
 
 #conky-rotate
 ctrl + alt + Next
@@ -154,10 +154,6 @@ ctrl + alt + Next
 #conky-rotate
 ctrl + alt + Prior
     conky-rotate -p
-
-#Atom
-ctrl + alt + w
-     atom
 
 #File-Manager
 ctrl + alt + b
@@ -432,8 +428,8 @@ super + q
     herbstclient close
 
 #close window/application
-super + shift + q 
-    herbstclient close    
+super + shift + q
+    herbstclient close
 
 #realod herbstluftwm
 super + shift +r
@@ -441,7 +437,7 @@ super + shift +r
 
 #Xkill
 super + shift + x
-    herbstclient quit        
+    herbstclient quit
 
 
 
