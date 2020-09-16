@@ -253,8 +253,7 @@ hc rule class=Insync pseudotile=on
 hc rule class=VirtualBox fullscreen=on
 hc rule class=Arcolinux-tweak-tool.py pseudotile=on
 hc rule class=Arcolinux-welcome-app.py pseudotile=on
-# No solution yet to dropdown xfce4-terminal
-# hc rule windowrole=xfce4-terminal-dropdown manage=off
+hc rule windowrole=xfce4-terminal-dropdown floating=on
 
 # unlock, just to be sure
 hc unlock
