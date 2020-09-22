@@ -54,8 +54,8 @@ esac
 
 echo "###########################################################"
 echo "We have only set this one screen resolution"
-echo "Check the comments of this script to change it to your screen"
-echo "It will a personal size and frequency"
+echo "Check the comments of this script to change it into"
+echo "what you need for your hardware"
 echo "###########################################################"
 
 echo "################################################################"
