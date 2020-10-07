@@ -432,8 +432,8 @@ super + shift +r
     herbstclient reload
 
 #Xkill
-super + shift + x
-    herbstclient quit
+#super + shift + x
+#    herbstclient quit
 
 
 

@@ -145,10 +145,9 @@ ${color1}[Ctrl]+[Alt]+U${alignr}${color2}Volume Control${color}
 ${color1}[PrtSc]${alignr}${color2}Screenshot${color}
 ${color1}[S]+[Shift]+R${alignr}${color2}Restart Hlwm${color}
 ${color1}${hr}${color}
-${color1}[S]+[Shift]+X${alignr}${color2}Stop Hlwm${color}
+${color1}[S]+[Shift]+X${alignr}${color2}Stop${color}
 ${color1}[S]+[Shift]+Q${alignr}${color2}Stop application${color}
 ${color1}[S]+Q${alignr}${color2}Stop application${color}
-${color1}[S]+[Shift]+x${alignr}${color2}Quick Exit${color}
 ${color1}[S]+x${alignr}${color2}Exit${color}
 ${color1}${hr}${color}
 ${color1}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${alignr}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
