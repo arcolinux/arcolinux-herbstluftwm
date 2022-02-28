@@ -280,7 +280,7 @@ hc unlock
 # hc detect_monitors
 # xrandr in a terminal and copy/paste your resolution in
 count=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l)
-if [ $count -qt 1 ]; then
+if [ $count -gt 1 ]; then
   hc set_monitors 1920x1080+0+0 1920x1080+1920+0
 fi
 
