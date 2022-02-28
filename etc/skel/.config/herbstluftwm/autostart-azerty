@@ -100,16 +100,16 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 # TAGS or WORKSPACES
 
 #names to display in menu
-tag_names=( {1..10} )
+#tag_names=( {1..10} )
 #tag_names=("Web" "Chat" "Edit" "Meld" "Vb" "Mail" "Video" "Image" "Files" "Music")
-#tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
+tag_names=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
 #keys to press to get to the tags
 #Qwerty
-tag_keys=( {1..10} 0 )
+#tag_keys=( {1..10} 0 )
 
 #Belgian azerty
-#tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla agrave )
+tag_keys=( ampersand eacute quotedbl apostrophe parenleft section egrave exclam ccedilla agrave )
 
 #French azerty
 #tag_keys=( ampersand eacute quotedbl apostrophe parenleft minus egrave underscore ccedilla agrave )

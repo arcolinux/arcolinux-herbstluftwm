@@ -320,6 +320,10 @@ ctrl + Print
 ctrl + shift + Print
      gnome-screenshot -i
 
+#Flameshot
+super + ctrl + Print
+    flameshot gui
+
 
 #################################################################
 #     FUNCTION KEYS
