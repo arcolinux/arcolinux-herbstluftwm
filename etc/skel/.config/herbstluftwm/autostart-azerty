@@ -279,9 +279,19 @@ hc unlock
 #Dualmonitor setup
 # hc detect_monitors
 # xrandr in a terminal and copy/paste your resolution in
+# Determine a sane resolution for Linux guests.
+# check if more than one screen
 count=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l)
+# sane defaults
+local X_RES=1152
+local Y_RES=648
+if [ "${XDG_SESSION_TYPE}" == "x11" ]; then
+  X_RES=$(xrandr --listmonitors | grep -v Monitors | cut -d' ' -f4 | cut -d'/' -f1 | sort | head -n1)
+  Y_RES=$(xrandr --listmonitors | grep -v Monitors | cut -d' ' -f4 | cut -d'/' -f2 | cut -d'x' -f2 | sort | head -n1)
+fi
+  
 if [ $count -gt 1 ]; then
-  hc set_monitors 1920x1080+0+0 1920x1080+1920+0
+  hc set_monitors $X_RES"x"$Y_RES"+0+0" $X_RES"x"$Y_RES"+"$X_RES"+0"
 fi
 
 #room for polybar on both monitors
