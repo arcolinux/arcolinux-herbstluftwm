@@ -326,6 +326,8 @@ dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 #feh --bg-scale ~/.config/herbstluftwm/wall.png &
 feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
+#wallpaper for other Arch based systems
+#feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 conky -c $HOME/.config/herbstluftwm/system-overview &
 run variety &
 nm-applet &
