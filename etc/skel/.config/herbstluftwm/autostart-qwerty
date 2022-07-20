@@ -261,7 +261,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class=Oblogout fullscreen=on
 hc rule class=Insync pseudotile=on
 hc rule class=VirtualBox fullscreen=on
-hc rule class=Archlinux-tweak-tool.py pseudotile=on
+#hc rule class=Archlinux-tweak-tool.py pseudotile=on
 hc rule class=Arcolinux-welcome-app.py pseudotile=on
 hc rule class=Arcolinux-calamares-tool.py pseudotile=on
 hc rule windowrole=xfce4-terminal-dropdown floating=on
