@@ -325,7 +325,7 @@ sxhkd -c ~/.config/herbstluftwm/sxhkd/sxhkdrc &
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 #feh --bg-scale ~/.config/herbstluftwm/wall.png &
 feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+feh --bg-fill /usr/share/backgrounds/arco/arco-wallpaper.jpg &
 #feh --bg-scale /usr/share/backgrounds/arcolinux/abstract-warm-heart-4560x2160.jpg
 conky -c $HOME/.config/herbstluftwm/system-overview &
 run variety &
@@ -345,4 +345,3 @@ run volumeicon &
 # discord &
 # run telegram-desktop &
 # spotify &
-# atom &
